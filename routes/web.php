@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/mahasiswa', function () {
     $nama1 = 'Habel Steven Yani';
     $nilai1 = "A";
+    $nama2 = 'Joko Hardono';
+    $nilai2 = "B";
 
-    return view('extend.isi1', compact('nama1','nilai1'));
+    return view('extend.isi1', compact('nama1','nilai1'), compact('nama2','nilai2'));
 });
+
+Route::get('/', [App\Http\Controllers\PageController::class,'index']);
+
+Route::get('/mahasiswa',
+[PageController::class,'tampil']);
+?>

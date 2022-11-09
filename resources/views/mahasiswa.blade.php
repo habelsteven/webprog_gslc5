@@ -22,7 +22,40 @@
     </head>
     <body class="antialiased">
         @include('layout.header')
-        @yield('content')
+        <li>
+            {{$nama1}},{{$nilai1}}
+            <br>
+            @switch($nilai1)
+                @case("D")
+                <div class="alert alert-success d-inline-block">tidak ikut ujian</div>
+                @break
+                @case("B")
+                <div class="alert alert-success d-inline-block">good</div>
+                @break
+                @case("A")
+                <div class="alert alert-success d-inline-block">perfect</div>
+                @break
+                @default
+                <div class="alert alert-success d-inline-block">nilai tidak valid</div>
+            @endswitch
+</li>
+<li>
+            {{$nama2}},{{$nilai2}}
+            <br>
+            @switch($nilai2)
+                @case("D")
+                <div class="alert alert-success d-inline-block" >tidak ikut ujian</div>
+                @break
+                @case("B")
+                <div class="alert alert-success d-inline-block">good</div>
+                @break
+                @case("A")
+                <div class="alert alert-success d-inline-block">perfect</div>
+                @break
+                @default
+                <div class="alert alert-success d-inline-block">nilai tidak valid</div>
+            @endswitch
+</li>
         @include('layout.footer')
     </body>
 </html>
